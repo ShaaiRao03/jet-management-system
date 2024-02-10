@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="636.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programming2_c1.AdminControllers.TransactionOperationController">
+   <children>
+      <VBox prefHeight="636.0" prefWidth="802.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="792.0" style="-fx-background-color: #ffedd1;">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="325.0" text="Select preferred transaction view based on the status below : " />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="77.0" prefWidth="792.0" style="-fx-background-color: #ffedd1;">
+               <children>
+                  <Button fx:id="underConsiderationBtn" mnemonicParsing="false" prefHeight="54.0" prefWidth="172.0" styleClass="standardButton" stylesheets="@style.css" text="Under Consideration">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="approvedBtn" mnemonicParsing="false" prefHeight="54.0" prefWidth="172.0" styleClass="standardButton" stylesheets="@style.css" text="Approved">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="537.0" prefWidth="792.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <TableView fx:id="transactionViewTable" layoutX="6.0" layoutY="101.0" prefHeight="370.0" prefWidth="778.0" stylesheets="@style.css">
+                    <columns>
+                      <TableColumn fx:id="transactionIDCol" prefWidth="105.60000610351562" text="Transaction ID " />
+                      <TableColumn fx:id="usernameCol" prefWidth="113.5999755859375" text="Username" />
+                        <TableColumn fx:id="jetIDCol" prefWidth="118.4000244140625" text="Jet ID" />
+                        <TableColumn fx:id="totalAmountCol" prefWidth="123.20001220703125" text="Total Amount" />
+                        <TableColumn fx:id="dateCol" prefWidth="124.800048828125" text="Date" />
+                        <TableColumn fx:id="actionCol" prefWidth="191.99993896484375" text="Actions" />
+                    </columns>
+                  </TableView>
+                  <ComboBox fx:id="monthCombo" layoutX="274.0" layoutY="28.0" prefHeight="26.0" prefWidth="106.0" promptText="Month" />
+                  <TextField fx:id="transactionSearchField" layoutX="28.0" layoutY="28.0" prefHeight="26.0" prefWidth="218.0" promptText="Search by Transaction ID" />
+                  <Label alignment="CENTER" layoutX="574.0" layoutY="21.0" prefHeight="18.0" prefWidth="128.0" text="Price range (in millions)" />
+                  <Button fx:id="transactionSearchBtn" layoutX="279.0" layoutY="64.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Search" />
+                  <ComboBox fx:id="yearCombo" layoutX="398.0" layoutY="28.0" prefHeight="26.0" prefWidth="106.0" promptText="Year" />
+                  <Button fx:id="resetTransactionBtn" layoutX="399.0" layoutY="64.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Reset" />
+                  <Slider fx:id="priceSlider" blockIncrement="5.0" layoutX="541.0" layoutY="37.0" majorTickUnit="10.0" max="50.0" minorTickCount="0" prefHeight="18.0" prefWidth="190.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="axis" stylesheets="@style.css" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

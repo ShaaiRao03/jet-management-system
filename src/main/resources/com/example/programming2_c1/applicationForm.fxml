@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="825.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programming2_c1.ClientControllers.ApplicationFormController">
+   <children>
+      <AnchorPane prefHeight="825.0" prefWidth="754.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="912.0" prefWidth="768.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+               <children>
+                  <HBox prefHeight="40.0" prefWidth="768.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="backFormClientBtn" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="110.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Back" visible="false" />
+                              <Button fx:id="backFormPreviewBtn" layoutX="-1.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="110.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Back" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="775.0" text="Jet Application Form">
+                     <font>
+                        <Font name="Californian FB Bold" size="32.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.6818181962677926" endY="0.4659090620098692" startX="0.6818182089112022" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.7052631378173828" green="0.2703508734703064" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Separator opacity="0.35" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="770.0" text="Aircraft Information" textFill="#713c08">
+                     <font>
+                        <Font name="Arial" size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/basicIcons/aircraft.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <HBox prefHeight="162.0" prefWidth="768.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="343.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="375.0" text="Quantity* :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="349.0" text="Additional feature or equipment :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="130.0" prefWidth="426.0">
+                           <children>
+                              <ComboBox fx:id="quantityBox" prefHeight="26.0" prefWidth="174.0" promptText="Select Quantity">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <TextArea fx:id="featureTextArea" maxHeight="99.0" maxWidth="400.0" prefHeight="99.0" prefWidth="400.0" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Separator opacity="0.35" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="770.0" text="Purchase Agreement Details" textFill="#713c08">
+                     <font>
+                        <Font name="Arial" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/basicIcons/contract.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="145.0" prefWidth="768.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="343.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="375.0" text="Purchase price :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="349.0" text="Payment Method* :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="349.0" text="Bank name* :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="159.0" prefWidth="425.0">
+                           <children>
+                              <Label fx:id="purchase_priceLabel" text="-">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="paymentBox" prefHeight="26.0" prefWidth="174.0" promptText="Select Payment Method">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="13.0" />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </ComboBox>
+                              <TextField fx:id="bankNameTextField" maxHeight="99.0" maxWidth="400.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Separator opacity="0.35" prefWidth="200.0" />
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="770.0" text="Delivery Information" textFill="#713c08">
+                     <font>
+                        <Font name="Arial" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/basicIcons/delivery.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="62.0" prefWidth="768.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="186.0" prefWidth="343.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="375.0" text="Delivery Country* :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="375.0" text="Delivery location* :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="130.0" prefWidth="426.0">
+                           <children>
+                              <ComboBox fx:id="countryBox" prefHeight="26.0" prefWidth="174.0" promptText="Select Country">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="locationBox" prefHeight="26.0" prefWidth="174.0" promptText="Select Location">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Separator opacity="0.35" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label alignment="CENTER" prefHeight="19.0" prefWidth="768.0" text="Note : Further information about finance and legal documentation will be obtained during a private discussion with our brokers." wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="768.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <AnchorPane fx:id="btnAnchor" prefHeight="60.0" prefWidth="278.0">
+                           <children>
+                              <Button fx:id="resetForm" layoutX="21.0" layoutY="7.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="standardButton" stylesheets="@style.css" text="Reset" />
+                              <Button fx:id="submitForm" layoutX="148.0" layoutY="7.0" maxHeight="41.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="standardButton" stylesheets="@style.css" text="Submit" />
+                              <Button fx:id="acceptBtn" layoutX="20.0" layoutY="7.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="standardButton" stylesheets="@style.css" text="Accept" />
+                              <Button fx:id="rejectBtn" layoutX="148.0" layoutY="7.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="110.0" styleClass="standardButton" stylesheets="@style.css" text="Reject" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

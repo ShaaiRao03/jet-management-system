@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cartAnchor" prefHeight="539.0" prefWidth="768.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programming2_c1.ClientControllers.CartController">
+   <children>
+      <TableView fx:id="cartTable" layoutX="8.0" layoutY="53.0" prefHeight="406.0" prefWidth="758.0" stylesheets="@style.css">
+        <columns>
+          <TableColumn fx:id="cartIDCol" prefWidth="75.19998168945312" text="Cart ID" />
+          <TableColumn fx:id="jetIDCol" minWidth="8.79998779296875" prefWidth="104.00003051757812" text="Jet ID (S/N)" />
+            <TableColumn fx:id="jetNameCol" prefWidth="196.0" text="Name" />
+            <TableColumn fx:id="statusCol" prefWidth="128.79998779296875" text="Status" />
+            <TableColumn fx:id="actionsCol" editable="false" minWidth="0.0" prefWidth="251.99993896484375" text="Actions" />
+        </columns>
+      </TableView>
+      <Label layoutX="8.0" layoutY="7.0" text="Cart Table">
+         <font>
+            <Font name="Californian FB Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.6401515151515151" endY="0.09848479068640507" startX="0.6553029743107883" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7568627595901489" green="0.3294117748737335" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="clearBtn" layoutX="8.0" layoutY="484.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="146.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Clear All" />
+      <Label layoutX="9.0" layoutY="464.0" text="Note :  It will take up to 7 days to get the confirmation regarding your application">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

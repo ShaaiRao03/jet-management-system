@@ -1,0 +1,131 @@
+.left-form{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-border-color: #b15200;
+    -fx-border-width: 2px;
+}
+
+.count-form{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+}
+
+
+.right-form{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-border-color: #b15200;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+
+
+.standardButtonNoHover{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-text-align: center;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-margin: 4px 2px;
+    -fx-display: inline-block;
+    -fx-text-decoration: none;
+    -fx-cursor: pointer;
+    -fx-background-radius: 30;
+}
+
+
+.standardButton{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-text-align: center;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-margin: 4px 2px;
+    -fx-opacity: 0.6;
+    -fx-transition: 0.3s;
+    -fx-display: inline-block;
+    -fx-text-decoration: none;
+    -fx-cursor: pointer;
+    -fx-background-radius: 10;
+}
+
+
+.standardButton:hover{
+    -fx-opacity: 1;
+}
+
+.rectStandardButton{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-text-align: center;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-margin: 4px 2px;
+    -fx-display: inline-block;
+    -fx-text-decoration: none;
+    -fx-cursor: pointer;
+}
+
+/*.rectStandardButton:hover{*/
+/*    -fx-opacity: 1;*/
+/*}*/
+
+.buttonCustomerNavigator{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.buttonCustomerNavigator:hover{
+    -fx-text-fill: #b15200;
+}
+
+.filterChoices{
+    -fx-background-color: white;
+}
+
+#priceSlider .axis { -fx-tick-label-fill: black; }
+
+.slider .axis {-fx-tick-label-fill: white; }
+
+
+.smallerVersionbtn{
+    -fx-background-color: linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-text-align: center;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-margin: 4px 2px;
+    -fx-display: inline-block;
+    -fx-text-decoration: none;
+    -fx-cursor: pointer;
+}
+
+
+.scroll-pane .viewport {
+    -fx-background-color: white; /*or whatever you want*/
+}
+
+
+.table-view .column-header-background{
+    -fx-background-color:linear-gradient(to bottom right, #7d3a00, #b15200);
+    -fx-background-insets: 0 0 0 0;
+}
+
+.table-view{
+    -fx-background-color:transparent;
+    -fx-border-color:linear-gradient(to bottom right, #7d3a00, #b15200);
+}
+
+.table-view .column-header-background{
+    -fx-background-color:linear-gradient(to bottom right, #7d3a00, #b15200);
+}
+
+.table-view .column-header, .filter{
+    -fx-background-color: transparent;
+    -fx-size:40px;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill:#ffff;
+    -fx-font-family:"Arial";
+}
+
+
+/*.text-field{*/
+    /*-fx-border-color:linear-gradient(to bottom right, #7d3a00, #b15200) ;*/
+    /*-fx-focus-color: linear-gradient(to bottom right, #b15200, #b15200); !* set the focus color *!*/
+/*}*/
+

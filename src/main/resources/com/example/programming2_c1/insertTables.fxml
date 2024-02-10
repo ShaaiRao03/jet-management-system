@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1668.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programming2_c1.AdminControllers.DataOperationController">
+   <children>
+      <VBox layoutX="42.0" layoutY="77.0" prefHeight="1508.0" prefWidth="792.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="792.0" style="-fx-background-color: #ffedd1;">
+               <children>
+                  <Button fx:id="manufacturerBtn" mnemonicParsing="false" prefHeight="54.0" prefWidth="172.0" styleClass="standardButton" stylesheets="@style.css" text="Manufacturer">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="modelBtn" mnemonicParsing="false" prefHeight="54.0" prefWidth="172.0" styleClass="standardButton" stylesheets="@style.css" text="Model">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="privateJetBtn" mnemonicParsing="false" prefHeight="54.0" prefWidth="172.0" styleClass="standardButton" stylesheets="@style.css" text="Private Jet">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="1600.0" prefWidth="792.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <AnchorPane fx:id="modelTableAnchor" prefHeight="677.0" prefWidth="788.0" style="-fx-background-color: #ffff;" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="792.0" style="-fx-background-color: #ffedd1;">
+                           <children>
+                              <Label text="Operation to perform : ">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button fx:id="addUpdateOperationModelBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" styleClass="buttonCustomerNavigator" stylesheets="@style.css" text="Add / Update">
+                                 <font>
+                                    <Font name="Britannic Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="deleteOperationModelBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" styleClass="buttonCustomerNavigator" stylesheets="@style.css" text="Delete">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Britannic Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <AnchorPane layoutX="14.0" layoutY="147.0" prefHeight="395.0" prefWidth="290.0" style="-fx-background-color: #ffff;" styleClass="right-form" stylesheets="@style.css">
+                           <children>
+                              <TextField fx:id="modelIDField" layoutX="11.0" layoutY="116.0" prefHeight="35.0" prefWidth="268.0" />
+                              <Label layoutX="12.0" layoutY="28.0" text="Manufacturer ID" />
+                              <Label layoutX="13.0" layoutY="97.0" text="Model ID" />
+                              <Button fx:id="modelUpdateBtn" layoutX="164.0" layoutY="252.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" text="Update" />
+                              <Button fx:id="modelAddBtn" layoutX="29.0" layoutY="252.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Add" />
+                              <Button fx:id="deleteModelBtn" layoutX="30.0" layoutY="314.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" text="Delete" />
+                              <Label layoutX="12.0" layoutY="167.0" text="Model Name" />
+                              <TextField fx:id="modelNameField" layoutX="10.0" layoutY="185.0" prefHeight="35.0" prefWidth="268.0" />
+                              <Button fx:id="clearModelBtn" layoutX="164.0" layoutY="312.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" text="Reset All" />
+                              <ComboBox fx:id="manufacturerIDModelCombo" layoutX="9.0" layoutY="49.0" prefHeight="26.0" prefWidth="268.0" promptText="Choose Manufacturer" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="modelTable" layoutX="318.0" layoutY="41.0" prefHeight="500.0" prefWidth="456.0" stylesheets="@style.css">
+                           <columns>
+                              <TableColumn fx:id="manufacturerModelIDCol" prefWidth="116.0" text="Manufacturer ID" />
+                              <TableColumn fx:id="modelIDCol" prefWidth="100.00003051757812" text="Model ID" />
+                              <TableColumn fx:id="modelNameCol" prefWidth="238.4000244140625" text="Model Name" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="searchModel" layoutX="17.0" layoutY="43.0" prefHeight="26.0" prefWidth="283.0" promptText="Search by Model Name" />
+                        <Button fx:id="searchModelBtn" layoutX="90.0" layoutY="110.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Search" />
+                        <ComboBox fx:id="manufacturerIDSearchCombo" layoutX="18.0" layoutY="77.0" prefHeight="26.0" prefWidth="283.0" promptText="Manufacturer" />
+                        <Button fx:id="resetModelBtn" layoutX="166.0" layoutY="110.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Reset" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="manufacturerTableAnchor" layoutX="71.0" layoutY="52.0" prefHeight="690.0" prefWidth="788.0" style="-fx-background-color: #ffff;" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="11.0" prefWidth="792.0" style="-fx-background-color: #ffedd1;">
+                           <children>
+                              <Label text="Operation to perform : ">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Button fx:id="addUpdateOperationManufacturerBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" styleClass="buttonCustomerNavigator" stylesheets="@style.css" text="Add / Update">
+                                 <font>
+                                    <Font name="Britannic Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="deleteOperationManufacturerBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" styleClass="buttonCustomerNavigator" stylesheets="@style.css" text="Delete">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Britannic Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <AnchorPane layoutX="14.0" layoutY="114.0" prefHeight="424.0" prefWidth="290.0" style="-fx-background-color: #ffff;" styleClass="right-form" stylesheets="@style.css">
+                           <children>
+                              <TextField fx:id="manufacturerIDfield" layoutX="10.0" layoutY="59.0" prefHeight="35.0" prefWidth="268.0" />
+                              <TextField fx:id="manufacturerNameField" layoutX="11.0" layoutY="157.0" prefHeight="35.0" prefWidth="268.0" />
+                              <Label layoutX="12.0" layoutY="32.0" text="Manufacturer ID" />
+                              <Label layoutX="13.0" layoutY="125.0" text="Manufacturer Name" />
+                              <Button fx:id="manufacturerUpdateBtn" layoutX="165.0" layoutY="260.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" text="Update" />
+                              <Button fx:id="manufacturerAddBtn" layoutX="30.0" layoutY="260.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Add" />
+                              <Button fx:id="manufacturerDltBtn" layoutX="31.0" layoutY="322.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" text="Delete" />
+                              <Button fx:id="resetManufacturerBtn" layoutX="165.0" layoutY="322.0" mnemonicParsing="false" prefHeight="36.8" prefWidth="100.0" styleClass="rectStandardButton" text="Reset All" />
+                              <ComboBox layoutX="11.0" layoutY="59.0" prefHeight="35.0" prefWidth="268.0" visible="false" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="manufacturerTable" layoutX="318.0" layoutY="36.0" prefHeight="500.0" prefWidth="456.0" stylesheets="@style.css">
+                          <columns>
+                            <TableColumn fx:id="manufacturerIDCol" prefWidth="230.13327026367188" text="Manufacturer ID" />
+                              <TableColumn fx:id="manufacturerNameCol" prefWidth="224.79998779296875" text="Manufacturer Name" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="searchManufacter" layoutX="17.0" layoutY="37.0" prefHeight="26.0" prefWidth="283.0" promptText="Search by Manufacturer Name" />
+                        <Button fx:id="searchManufacturerBtn" layoutX="92.0" layoutY="72.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Search" />
+                        <Button fx:id="resetManufacturerSearchBtn" layoutX="163.0" layoutY="72.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Reset" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="privateJetTableAnchor" prefHeight="1836.0" prefWidth="792.0" style="-fx-background-color: #ffff;" visible="false" AnchorPane.bottomAnchor="-236.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox prefHeight="1632.0" prefWidth="792.0" style="-fx-background-color: #ffff;" stylesheets="@style.css" AnchorPane.bottomAnchor="246.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="2.0" prefWidth="792.0" style="-fx-background-color: #ffedd1;">
+                                 <children>
+                                    <Label text="Operation to perform : ">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Button fx:id="addUpdateOperationPrivateJetBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" styleClass="buttonCustomerNavigator" stylesheets="@style.css" text="Add / Update">
+                                       <font>
+                                          <Font name="Britannic Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="deleteOperationPrivateJetBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" styleClass="buttonCustomerNavigator" stylesheets="@style.css" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="Britannic Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="46.0" prefWidth="792.0">
+                                 <children>
+                                    <TextField fx:id="searchJetField" prefHeight="26.0" prefWidth="243.0" promptText="Search by Jet Name" />
+                                    <ComboBox fx:id="manufacturerJetCombo" prefHeight="26.0" prefWidth="190.0" promptText="Manufacturer">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                    <ComboBox fx:id="modelJetCombo" prefHeight="26.0" prefWidth="251.0" promptText="Model" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="792.0">
+                                 <children>
+                                    <Button fx:id="searchJetBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Search">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="resetJetBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" styleClass="smallerVersionbtn" stylesheets="@style.css" text="Reset" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox prefHeight="1354.0" prefWidth="792.0">
+                                 <children>
+                                    <AnchorPane fx:id="jetAnchor" maxHeight="1000.0" prefHeight="357.0" prefWidth="803.0">
+                                       <children>
+                                          <TableView fx:id="privateJetTable" layoutX="16.0" layoutY="41.0" prefHeight="267.0" prefWidth="762.0" stylesheets="@style.css">
+                                            <columns>
+                                              <TableColumn fx:id="modelIDColJet" prefWidth="75.0" text="Model ID" />
+                                              <TableColumn fx:id="jetIDCol" prefWidth="84.800048828125" text="Jet ID" />
+                                                <TableColumn fx:id="yearCol" prefWidth="70.40005493164062" text="Year" />
+                                                <TableColumn fx:id="highlight1Col" prefWidth="130.13330078125" text="Highlight 1" />
+                                                <TableColumn fx:id="highlight2Col" prefWidth="129.066650390625" text="Highlight 2" />
+                                                <TableColumn fx:id="imageCol" prefWidth="97.60003662109375" text="Image " />
+                                                <TableColumn fx:id="priceCol" prefWidth="99.46673583984375" text="Price" />
+                                                <TableColumn fx:id="quantityCol" prefWidth="71.73321533203125" text="Quantity" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="355.0" layoutY="19.0" text="Private Jet Table" />
+                                          <AnchorPane layoutX="14.0" layoutY="314.0" prefHeight="53.0" prefWidth="764.0">
+                                             <children>
+                                                <Label layoutX="8.0" layoutY="28.0" text="Jet ID : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="jetIDField" layoutX="63.0" layoutY="29.0" maxHeight="800.0" maxWidth="324.0" prefHeight="22.0" prefWidth="306.0" />
+                                                <Button fx:id="deleteJetBtn" layoutX="394.0" layoutY="18.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="100.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Delete" />
+                                                <Label layoutX="8.0" layoutY="-1.0" text="Private Jet Name : ">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="jetNameLabel" layoutX="134.0" layoutY="-1.0" text="-">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox fx:id="privateJetHboxMain" prefHeight="321.0" prefWidth="792.0">
+                                       <children>
+                                          <VBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="385.0">
+                                             <children>
+                                                <Label prefHeight="38.0" prefWidth="365.0" text="PRIVATE JET">
+                                                   <font>
+                                                      <Font name="Californian FB Bold" size="32.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="1.0" green="0.4000000059604645" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="20.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Model ID : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="15.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Year : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Highlight 1 : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Highlight 2 : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Image : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="6.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Price : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="8.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Quantity : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="8.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <padding>
+                                                <Insets right="30.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox prefHeight="100.0" prefWidth="413.0">
+                                             <children>
+                                                <ComboBox fx:id="modelIDJetCombo" prefHeight="26.0" prefWidth="166.0" promptText="Choose Model ID">
+                                                   <VBox.margin>
+                                                      <Insets top="70.0" />
+                                                   </VBox.margin>
+                                                </ComboBox>
+                                                <ComboBox fx:id="yearCombo" prefHeight="26.0" prefWidth="168.0" promptText="Choose year">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </ComboBox>
+                                                <TextField fx:id="highlight1Field" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="highlight2Field" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="imageField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="priceField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="quantityField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="privateJetHboxRest" maxHeight="1000.0" maxWidth="1000.0" prefHeight="794.0" prefWidth="792.0">
+                                       <children>
+                                          <VBox alignment="TOP_RIGHT" prefHeight="754.0" prefWidth="384.0">
+                                             <children>
+                                                <Label prefHeight="38.0" prefWidth="408.0" text="AIRFRAME">
+                                                   <font>
+                                                      <Font name="Californian FB Bold" size="32.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="40.0" />
+                                                   </VBox.margin>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="1.0" green="0.4000000059604645" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                </Label>
+                                                <Label prefHeight="22.0" prefWidth="162.0" text="Total Time Since New  :  ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="27.0" top="18.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Total  Landings Since New   : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label prefHeight="38.0" prefWidth="441.0" text="ENGINE">
+                                                   <font>
+                                                      <Font name="Californian FB Bold" size="32.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="1.0" green="0.4000000059604645" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Total  Hours Since New   : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="18.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Total  Cycles Since New   : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Right Engine ID : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="8.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Left Engine ID : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="8.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Engine Description : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="11.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label prefHeight="38.0" prefWidth="403.0" text="INTERIOR">
+                                                   <font>
+                                                      <Font name="Californian FB Bold" size="32.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="1.0" green="0.4000000059604645" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Forward Cabin Configuration : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="18.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Aft Cabin Configuration : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="8.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Number of Passengers : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="8.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label prefHeight="38.0" prefWidth="374.0" text="EXTERIOR">
+                                                   <font>
+                                                      <Font name="Californian FB Bold" size="32.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="1.0" green="0.4000000059604645" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" top="40.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Stripe : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="15.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label text="Base Paint : ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" right="31.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox prefHeight="725.0" prefWidth="410.0">
+                                             <children>
+                                                <TextField fx:id="totalTimeSinceNewField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="93.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="totalLandingsSinceNewField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="TotalHoursSinceNewField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="93.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="TotalCyclesSinceNewField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="rightEngineIDField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="leftEngineIDField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="engineDescField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="forwardCabinField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="90.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="aftCabinField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="numPassengersField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="stripeField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="80.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="basePaintField" maxHeight="800.0" maxWidth="324.0" prefHeight="26.0" prefWidth="305.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="70.0" prefWidth="792.0">
+                                 <children>
+                                    <Button fx:id="addJetBtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="100.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Add" />
+                                    <Button fx:id="updateJetBtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="100.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Update">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="resetJetFieldBtn" mnemonicParsing="false" prefHeight="45.0" prefWidth="100.0" styleClass="rectStandardButton" stylesheets="@style.css" text="Reset All">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
